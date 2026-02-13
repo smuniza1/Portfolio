@@ -1,0 +1,221 @@
+ @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+    :root {
+      --navy-blue: #001C99;
+      --golden-yellow: #F4BB29;
+      --background: #f4f4ee;
+    }
+
+.graphics-page main {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+.thumbnail-container {
+  position: relative;
+  display: block;
+}
+.thumbnail-heading {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0;
+  font-family: Arimo;
+  margin: 0;
+  color: var(--golden-yellow);
+}
+.thumbnail-image:hover + .thumbnail-heading {
+  display: block;
+
+}
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 10px 20px 0px;
+  margin-top: 100px;
+  margin-left: 130px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 410px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  /*webkit-filter: blur(4px); Chrome, Safari, Opera */
+    filter: blur(4px);
+}
+    header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      color: var(--navy-blue);
+    }
+  
+  #menu-icon {
+      margin: auto;
+      position: absolute;
+      font-size: 40px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+  header h1 {
+      font-size: 40px;
+      font-weight: bold;
+      align-items: center;
+      margin: 0 auto;
+      font-family: Arimo;
+      color: var(--navy-blue);
+      display: flex;
+    }
+
+
+.paragraph {
+z-index: 2;
+color: #001c99;
+text-align: center;
+flex-flow: row;
+margin-top: 40px;
+margin-bottom: 0;
+margin-left: 20px;
+padding-top: 0;
+padding-left: 0;
+font-size: 40px;
+display: block;
+position: absolute;
+transform: translate(0, -16px);
+}
+
+
+.circle {
+border: 1px solid #74c009;
+border-radius: 50%;
+width: 100px;
+min-width: 0;
+height: 100px;
+min-height: 0;
+position: relative;
+}
+.green-circlles {
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+margin: auto;
+flex-flow: column;
+grid-template-rows: auto auto;
+grid-template-columns: 1fr 1fr;
+grid-auto-columns: 1fr;
+place-items: center;
+display: flex;
+position: relative;
+overflow: visible;
+gap: 25px;
+z-index: 25;
+}
+
+.page-heading {
+  width: 25%;
+  min-width: 175px; /* Prevent becoming too narrow */
+  max-width: 175px;
+  padding: 0;
+  background-color: none;
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 1;
+  height: calc(100vh - 100px);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  top: 100px;
+  flex-direction: column;
+}
+.page-heading h1 {
+  transform: rotate(-90deg);
+  z-index: 2;
+  background-color: none;
+  font-family: Arimo;
+  font-size: 92px;
+  position: absolute;
+  margin: 0;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  color: var(--navy-blue);
+}
+
+/*body {
+      background-color: var(--background);
+      min-height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+*/
+
+
+.div-block-2 {
+  flex-flow: column;
+  justify-content: center; align-items: center; width: 100%;
+  display: inline-flex;
+  position: absolute;
+}
+.video-headers {
+color: #001c99;
+text-align: center;
+width: 100%;
+font-size: 35px;
+}
+.navbar {
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+background-color: #f4f4ee;
+flex-flow: row;
+width: 100%;
+height: 40px;
+padding: 1rem 1rem 3rem;
+display: flex;
+position: fixed;
+z-index: 100;
+margin: 0;
+top: 0;
+left: 0;
+right: 0;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.menu-button {
+z-index: 0;
+transform: translate(0, -102px);
+}
+.button {
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+color: #001c99;
+background-color: #3898ec00;
+margin-left: 20px;
+padding: 10px 0;
+font-size: 40px;
+display: inline-flex;
+}
+
+.grid {
+grid-column-gap: 24px;
+grid-row-gap: 24px;
+grid-template-rows: 300px 300px 300px; grid-template-columns: 400px 400px; grid-auto-columns: 1fr;
+width: 100%;
+display: grid;
+}
