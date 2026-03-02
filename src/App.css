@@ -16,14 +16,29 @@
     header {
       width: 100%;
       position: relative;
-      z-index: 5;
+      z-index: 1000;
       padding: 1rem 1.5rem;
       color: var(--navy-blue);
+    }
+
+    .sidenav {
+      height: 100%; /* 100% Full-height */
+      width: 0;
+      position: fixed; /* Stay in place */
+      top: 0; /* Stay at the top */
+      left: 0;
+      background-color: #f4f4ee;
+      overflow-x: hidden; /* Disable horizontal scroll */
+      padding-top: 60px; /* Place content 60px from the top */
+      transition: width 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+      z-index: 999;
     }
 
     #menu-icon {
       margin: auto;
       position: absolute;
+      top: 20px; /* Add this */
+      left: 20px;
       font-size: 40px;
       margin-left: 10px;
       cursor: pointer;
@@ -276,19 +291,7 @@
     }
 
     /* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0;
-  position: fixed; /* Stay in place */
-  z-index: 1000; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #f4f4ee;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: width 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  z-index: 2;
-}
+
 
 .page-heading h1 {
   pointer-events: none;
@@ -316,19 +319,7 @@
   color: #f1f1f1;
 }
 
-.closebtn {
-  z-index: 2000;
-  cursor: pointer;
-  position: absolute;
-}
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
