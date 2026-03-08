@@ -1,12 +1,15 @@
 import PageTitle from "../components/PageTitle";
 import "./About.css";
+import { Link } from "react-router-dom";
 
 export default function About({ openNav }) {
   return (
     <div>
       <header>
     <p id="menu-icon" onClick={openNav}>☰</p>
-    <h1>MUNIZA SIDDIQUI</h1>
+    <Link to="/" className="site-header">
+      <h1>MUNIZA SIDDIQUI</h1>
+    </Link>
   </header>
         <PageTitle title="ABOUT ME"/>
 

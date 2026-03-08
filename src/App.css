@@ -16,7 +16,6 @@
     header {
       width: 100%;
       position: relative;
-      z-index: 1000;
       padding: 1rem 1.5rem;
       color: var(--navy-blue);
     }
@@ -44,7 +43,7 @@
       cursor: pointer;
     }
 
-    header h1 {
+    .site-header {
       font-size: 40px;
       font-weight: bold;
       align-items: center;
@@ -52,6 +51,8 @@
       font-family: Arimo;
       color: var(--navy-blue);
       display: flex;
+      cursor: pointer;
+      text-decoration: none;
     }
     .head-portion {
       position: relative;
@@ -98,75 +99,21 @@
     
     
     #P {
-      transform: rotate(-22deg);
       top: 40px;
       position: relative;
     }
 
-    #o1 {
-      transform: rotate(20deg);
-      top: -60px;
-      position: relative;
-    }
-    #r {
-      transform: rotate(-24deg);
-      top: 30px;
-      position: relative;
-      left: -40px;
-    }
-    #t {
-      transform: rotate(19deg);
-      top: -37px;
-      left: -20px;
-      position: relative;
-    }
     #f {
-      transform: rotate(20deg);
       position: relative;
       left: -23px;
       top: -25px;
     }
-    #o2 {
-      transform: rotate(-12deg);
-      position: relative;
-      top: -40px;
-      left: -10px;
-    }
-    #l {
-      transform: rotate(-12deg);
-      position: relative;
-      left: -10px;
-      top: -20px;
-    }
-    #i {
-      transform: rotate(5deg);
-      position: relative;
-      left: 5px;
-      top: -25px;
-    }
-    #o3 {
-      transform: rotate(20deg);
-      position: relative;
-      top: -27px;
-      left: 7px;
-    }
+
     .letter {
       padding-right: 20px;
       padding-top: 0;
       padding-bottom: 0;
       position: relative;
-    }
-
-    .p-6 {
-      padding: 1.5rem;
-    }
-
-    .w-32 {
-      width: 8rem;
-    }
-
-    .h-32 {
-      height: 8rem;
     }
 
     .categories-link {
@@ -200,7 +147,7 @@
     .yolk-1 {
       background-color:#F4BB29;
       border-radius: 50%;
-      transform: translate(215px, -252px);
+      transform: translate(750px, -150px);
       position: absolute;
       width: 30px;
       height: 30px;
@@ -210,8 +157,8 @@
     .yolk-2 {
       background-color:#F4BB29;
       border-radius: 50%;
-      top: 105px;
-      transform: translateX(430px);
+      top: 125px;
+      transform: translateX(325px);
       position: absolute;
       width: 30px;
       height: 30px;
@@ -259,7 +206,7 @@
 
     #wavy-line {
       position: relative;
-      left: 30px;
+      left: 200px;
       top: 20px;
       margin: 0;
       padding-bottom: 0;
@@ -278,16 +225,17 @@
       padding: 0;
     }
     #little-wave-1 {
-      bottom: 250px;
-      left: 75px;
-      transform: rotate(32deg);
+      bottom: 350px;
+      left: 120px;
+      transform: rotate(270deg);
     }
     #little-wave-2 {
-      top: 30px;
-      right: 35px;
+      bottom: 55px;
+      right: 37px;
     }
     #little-wave-3 {
-      left: 53px;
+      left: 110px;
+      transform: rotate(-45deg);
     }
 
     /* The side navigation menu */

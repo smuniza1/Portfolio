@@ -6,7 +6,6 @@ export default function Home({ openNav }) {
       <header>
         <p id="menu-icon" onClick={openNav}>☰</p>
 
-        <h1>MUNIZA SIDDIQUI</h1>
       </header>
 
       <section className="head-portion">
@@ -48,45 +47,14 @@ export default function Home({ openNav }) {
       stroke="#F4BB29" fill="none" strokeWidth={1}/>
     </svg>
         <div className="portfolio-letters top">
-          <p className="letter" id="P">P</p>
-          <p className="letter" id="o1">o</p>
-          <p className="letter" id="r">r</p>
-          <p className="letter" id="t">t</p>
+          <p className="letter" id="P">Muniza</p>
         </div>
         <div className="portfolio-letters bottom">
-          <p className="letter" id="f">f</p>
-          <p className="letter" id="o2">o</p>
-          <p className="letter" id="l">l</p>
-          <p className="letter" id="i">i</p>
-          <p className="letter" id="o3">o</p>
+          <p className="letter" id="f">Siddiqui</p>
         </div>
       </section>
 
-      <div className="categories">
-        <div className="category-group">
-          <div className="circle-group">
-            <div className="circle"></div>
-            <div className="inner-circle"></div>
-          </div>
-          <Link to="/graphics" className="categories-link">WORK</Link>
-        </div>
-
-        <div className="category-group">
-          <div className="circle-group">
-            <div className="circle"></div>
-            <div className="inner-circle"></div>
-          </div>
-          <Link to="/about" className="categories-link">ABOUT</Link>
-        </div>
-
-        {/*<div className="category-group">
-          <div className="circle-group">
-            <div className="circle"></div>
-            <div className="inner-circle"></div>
-          </div>
-          <Link to="/video" className="categories-link">VIDEO</Link>
-        </div>*/}
-      </div>
+      
     </>
   );
 }

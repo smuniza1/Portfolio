@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Graphics.css";
 import PageTitle from "../components/PageTitle";
+import { Link } from "react-router-dom";
 
 
 export default function Graphics({openNav}) {
@@ -10,12 +11,14 @@ export default function Graphics({openNav}) {
 <div className="graphics-page">
     <header>
     <p id="menu-icon" onClick={openNav}>☰</p>
-    <h1>MUNIZA SIDDIQUI</h1>
+    <Link to="/" className="site-header">
+      <h1>MUNIZA SIDDIQUI</h1>
+    </Link>
   </header>
       <main>
         <PageTitle title="GRAPHICS"/>
 
-        <div className="gallery">
+        <div className="gallery graphics-gap">
           <div className="thumbnail-container">
             <img className="thumbnail-image" src="/images/mamas-pizza.jpg" alt="Pizza Logo" />
             <h2 className="thumbnail-heading">MAMA'S NY STYLE PIZZA LOGO</h2>

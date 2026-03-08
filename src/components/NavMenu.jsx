@@ -29,7 +29,8 @@ export default function NavMenu({ isOpen, close }) {
       className={`sidenav ${isOpen ? "open" : ""}`}
     >
       <Link to="/" onClick={close}>HOME</Link>
-      <Link to="/graphics" onClick={close}>WORK</Link>
+      <Link to="/graphics" onClick={close}>GRAPHICS</Link>
+      <Link to="/webdesign" onClick={close}>WEB DESIGN</Link>
       <Link to="/about" onClick={close}>ABOUT</Link>
     </div>
   );
