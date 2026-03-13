@@ -1,15 +1,74 @@
  @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
-    :root {
+    
+* {
+  box-sizing: border-box;
+}
+
+ :root {
       --navy-blue: #001C99;
       --golden-yellow: #F4BB29;
       --background: #f4f4ee;
     }
 
+.thumbnail-container {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  padding: 20px;
+}
+
+
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  color: var(--golden-yellow);
+  font-weight: bold;
+  font-family: Arimo, sans-serif;
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 48px;
+  cursor: pointer;
+  z-index: 5001;
+}
+
 .graphics-page main {
   display: flex;
-  flex: 1;
+  flex: 1; /*how a flexible item will grow and shrink to fit the space available within its flex container*/
   width: 100%;
 }
+
 .thumbnail-container {
   position: relative;
   display: block;
@@ -26,9 +85,13 @@
   margin: 0;
   color: var(--golden-yellow);
 }
-.thumbnail-image:hover + .thumbnail-heading {
+/*.thumbnail-image:hover + .thumbnail-heading {
   display: block;
 
+}*/
+
+.content {
+  margin-left: 200px;
 }
 .gallery {
   display: flex;
@@ -36,29 +99,60 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px 10px 20px 0px;
-  margin-top: 100px;
-  margin-left: 130px;
-  
+  margin-top: 25px;
+  margin-right: 0;
+}
+
+.captions {
+  font-family: Arimo;
+  color: var(--golden-yellow);
+  font-size: 32px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.brand-names {
+  font-family: "Bodoni 72";
+  color: var(--navy-blue);
+  text-align: left;
+  font-size: 54px;
+}
+
+.brand-images {
+  display: flex;
+  align-items: flex-start; 
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ig-posts {
+  width: 400px;
+  padding-bottom: 30px;
 }
 
 .graphics-gap {
     gap: 16px;
 }
+#mamas-image {
+  width: 500px;
+}
+#mural-image {
+  width: 521px;
+}
+
+.posters-text {
+  font-family: "Arimo";
+  text-align: center;
+  justify-content: center;
+  color: var(--navy-blue);
+}
 
 .gallery img {
   width: 100%;
-  max-width: 410px;
+  height: 450px;
   object-fit: cover;
   transition: 0.3s;
 }
 
-.gallery img:hover {
-  /*webkit-filter: blur(4px); Chrome, Safari, Opera */
-    filter: blur(4px);
-}
     
 header {
       width: 100%;
@@ -86,24 +180,6 @@ header {
       color: var(--navy-blue);
       display: flex;
     }
-
-
-.paragraph {
-z-index: 2;
-color: #001c99;
-text-align: center;
-flex-flow: row;
-margin-top: 40px;
-margin-bottom: 0;
-margin-left: 20px;
-padding-top: 0;
-padding-left: 0;
-font-size: 40px;
-display: block;
-position: absolute;
-transform: translate(0, -16px);
-}
-
 
 .circle {
 border: 1px solid #74c009;

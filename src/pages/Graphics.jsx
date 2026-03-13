@@ -4,52 +4,111 @@ import PageTitle from "../components/PageTitle";
 import { Link } from "react-router-dom";
 
 
-export default function Graphics({openNav}) {
-  return (
-    <>
-    
-<div className="graphics-page">
-    <header>
-    <p id="menu-icon" onClick={openNav}>☰</p>
-    <Link to="/" className="site-header">
-      <h1>MUNIZA SIDDIQUI</h1>
-    </Link>
-  </header>
-      <main>
-        <PageTitle title="GRAPHICS"/>
+const images = [
+  { full: "/images/poetry-slam-1-full.jpg",
+    title: "POETRY SLAM POSTER" },
+  { full: "/images/video-snack-full.jpg",
+    title: "VIDEO SNACK" },
+  { full: "/images/poetry-slam-2-full.png",
+    title: "POETRY SLAM POSTER" },
+  { full: "/images/paul-thek-full.jpg",
+    title: "PAUL THEK POSTER" },
+  {/*{ thumb: "/images/isee-logo.jpg", 
+    full: "",
+    title: "ISEE LOGO" },
+  { thumb: "/images/yep-cover.png", 
+    full: "",
+    title: "YEP SONG COVER" },*/}
+];
 
-        <div className="gallery graphics-gap">
-          <div className="thumbnail-container">
-            <img className="thumbnail-image" src="/images/mamas-pizza.jpg" alt="Pizza Logo" />
-            <h2 className="thumbnail-heading">MAMA'S NY STYLE PIZZA LOGO</h2>
+export default function Graphics({ openNav }) {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const closeLightbox = () => setSelectedImage(null);
+
+  return (
+    <div className="graphics-page">
+      <header>
+        <p id="menu-icon" onClick={openNav}>☰</p>
+        <Link to="/" className="site-header">
+          <h1>MUNIZA SIDDIQUI</h1>
+        </Link>
+      </header>
+
+      <main>
+        <PageTitle title="GRAPHICS" />
+        <div className="content">
+          <div className="brands">
+            <div className="lif">
+              <h1 className="brand-names">Lost in Frenchlation</h1>
+              <div className="brand-images">
+                <img className="ig-posts" src="/images/lif-social-1.jpeg"></img>
+                <img className="ig-posts" src="/images/lif-social-2.jpeg"></img>
+                <img className="ig-posts" src="/images/lif-social-3.jpeg"></img>
+                <img className="ig-posts" src="/images/lif-social-4.jpeg"></img>
+                <img className="ig-posts" src="/images/lif-story-5.png"></img>
+              </div>
+            </div>
+            <div className="mamas-pizza">
+              <h1 className="brand-names">Mama's NY Style Pizza</h1>
+              <div className="brand-images">
+                <figure>
+                <figcaption className="captions">LOGO</figcaption>
+                <img className="ig-posts"  id="mamas-image" src="/images/mamas-pizza.jpg"></img>
+                </figure>
+                <figure>
+                <figcaption className="captions">MURAL</figcaption>
+                <img className="ig-posts" id="mural-image" src="/images/mural-full.jpg"></img>
+                </figure>
+              </div>
+            </div>
+            
           </div>
-          <div className="thumbnail-container">
-            <img className="thumbnail-image" src="/images/poetry-slam-1.jpg" alt="Poetry Slam Poster" />
-            <h2 className="thumbnail-heading">POETRY SLAM POSTER</h2>
-          </div>
-          <div className="thumbnail-container">
-            <img className="thumbnail-image" src="/images/video-snack.jpg" alt="Video Snack" />
-            <h2 className="thumbnail-heading">VIDEO SNACK</h2>
-          </div>
-          <div className="thumbnail-container">
-            <img className="thumbnail-image" src="/images/poetry-slam-2.jpg" alt="Poetry Slam Poster" />
-            <h2 className="thumbnail-heading">POETRY SLAM POSTER</h2>
-          </div>
-          <div className="thumbnail-container">
-            <img className="thumbnail-image" src="/images/paul-thek.jpg" alt="Paul Thek" />
-            <h2 className="thumbnail-heading">PAUL THEK POSTER</h2>
-          </div>
-          <div className="thumbnail-container">
-            <img className="thumbnail-image" src="/images/isee-logo.jpg" alt="ISEE Logo" />
-            <h2 className="thumbnail-heading">ISEE LOGO</h2>
-          </div>
-          <div className="thumbnail-container">
-            <img className="thumbnail-image" src="/images/yep-cover.png" alt="YEP Song Cover" />
-            <h2 className="thumbnail-heading">YEP SONG COVER</h2>
+          <h1 className="posters-text">POSTERS</h1>
+          <div className="gallery graphics-gap">
+            
+            {images.map((image) => (
+              <div
+                key={image.full}
+                className="thumbnail-container"
+                onClick={() => setSelectedImage(image)}
+              >
+                <img
+                  className="thumbnail-image"
+                  src={image.full}
+                  alt={image.title}
+                />
+                <h2 className="thumbnail-heading">{image.title}</h2>
+              </div>
+            ))}
           </div>
         </div>
+
       </main>
-      </div>
-    </>
+
+      {selectedImage && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <button
+            className="lightbox-close"
+            onClick={closeLightbox}
+            aria-label="Close lightbox"
+          >
+            &times;
+          </button>
+
+          <div
+            className="lightbox-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              className="lightbox-image"
+              src={selectedImage.full}
+              alt={selectedImage.title}
+            />
+            <p className="lightbox-caption">{selectedImage.title}</p>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
