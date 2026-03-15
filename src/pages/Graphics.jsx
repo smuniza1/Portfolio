@@ -31,7 +31,7 @@ export default function Graphics({ openNav }) {
       <header>
         <p id="menu-icon" onClick={openNav}>☰</p>
         <Link to="/" className="site-header">
-          <h1>MUNIZA SIDDIQUI</h1>
+          <h1>Muniza Siddiqui</h1>
         </Link>
       </header>
 
@@ -62,8 +62,21 @@ export default function Graphics({ openNav }) {
                 </figure>
               </div>
             </div>
+            <div className="music-pops">
+              <h1 className="brand-names">Music Pops</h1>
+              <div className="music-pops-images">
+                <img id="music-pops-box" src="/images/music-pops-box-design.png"></img>
+                <div className="music-pops-grid">
+                  <img src="/images/music-pops-katy-front.png"></img>
+                  <img src="/images/music-pops-brent-front.png"></img>
+                  <img src="/images/music-pops-sza-front.png"></img>
+                  <img src="/images/music-pops-nicki-front.png"></img>
+                </div>
+              </div>
+            </div>
             
-          </div>
+          
+          
           <h1 className="posters-text">POSTERS</h1>
           <div className="gallery graphics-gap">
             
@@ -82,6 +95,7 @@ export default function Graphics({ openNav }) {
               </div>
             ))}
           </div>
+        </div>
         </div>
 
       </main>

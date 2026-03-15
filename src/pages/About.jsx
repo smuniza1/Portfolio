@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 export default function About({ openNav }) {
   return (
-    <div>
+    <div className="about-page">
       <header>
     <p id="menu-icon" onClick={openNav}>☰</p>
     <Link to="/" className="site-header">
-      <h1>MUNIZA SIDDIQUI</h1>
+      <h1>Muniza Siddiqui</h1>
     </Link>
   </header>
         <PageTitle title="ABOUT ME"/>

@@ -8,7 +8,7 @@ export default function WebDesign({ openNav }) {
       <header>
     <p id="menu-icon" onClick={openNav}>☰</p>
     <Link to="/" className="site-header">
-      <h1>MUNIZA SIDDIQUI</h1>
+      <h1>Muniza Siddiqui</h1>
     </Link>
   </header>
       <PageTitle title="WEB DESIGN"/>

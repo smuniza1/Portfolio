@@ -1,8 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Arimo:ital,wght@0,400..700;1,400..700&family=Pixelify+Sans:wght@400..700&family=Shrikhand&display=swap");
+
     :root {
       --navy-blue: #001C99;
       --golden-yellow: #F4BB29;
       --background: #f4f4ee;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      overflow-x: hidden;
     }
     body {
       background-color: var(--background);
@@ -18,6 +27,7 @@
       position: relative;
       padding: 1rem 1.5rem;
       color: var(--navy-blue);
+      box-sizing: border-box;
     }
 
     .sidenav {
@@ -48,195 +58,69 @@
       font-weight: bold;
       align-items: center;
       margin: 0 auto;
-      font-family: Arimo;
+      font-family: "Shrikhand";
       color: var(--navy-blue);
       display: flex;
       cursor: pointer;
       text-decoration: none;
     }
-    .head-portion {
-      position: relative;
-      padding: 0;
-      width: fit-content;
-      margin: 0 auto;
-      padding-bottom: 0;
-      height: 0;
 
+    .site-header h1 {
+      font-family: "Shrikhand";
     }
 
-    .portfolio-letters {
-      display: flex;
-      font-size: 250px;
-      font-weight: 500;
-      color: var(--navy-blue);
-      position: relative;
-      font-family: "Bodoni 72";
-      margin-top: 0;
-      padding: 0;
-    }
-
-    .portfolio-letters.top, .portfolio-letters.bottom {
-            transform: translateY(-900px);
-
-    }
-
-    .portfolio-letters.top {
-      display: flex;
-      padding: 0;
-      margin-top: 0px;
-      left: 25px;
-    }
-    
-    .portfolio-letters.bottom {
-      display: flex;
-      padding: 0;
-      margin: 0;
-    }
-
-    .portfolio-letters p {
-      margin: 0;
-    }
-    
-    
-    #P {
-      top: 40px;
-      position: relative;
-    }
-
-    #f {
-      position: relative;
-      left: -23px;
-      top: -25px;
-    }
-
-    .letter {
-      padding-right: 20px;
-      padding-top: 0;
-      padding-bottom: 0;
-      position: relative;
-    }
-
-    .categories-link {
+    .name {
+      font-family: "Shrikhand";
+      font-size: 200px;
       text-align: center;
-      position: absolute;
-      font-size: 60px;
-      font-weight: 600;
-      font-family: Arimo;
-      text-decoration: none;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .blue-name {
       color: var(--navy-blue);
-      background-color: var(--background);
+      position: absolute;
+      margin: 0;
+      padding: 0;
       z-index: 1;
-      white-space: nowrap;
-      align-items: center;
-      padding: 10px 80px;
-    }
-    .categories {
-      display: flex;
-      padding: 0;
-      transform: translateY(900px);
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin: 0 auto;
+
     }
 
-    .yolk-container {
-      position: relative;
-    }
-    
-    .yolk-1 {
-      background-color:#F4BB29;
-      border-radius: 50%;
-      transform: translate(750px, -150px);
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      margin: 0;
-    }
 
-    .yolk-2 {
-      background-color:#F4BB29;
-      border-radius: 50%;
-      top: 125px;
-      transform: translateX(325px);
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      margin: 0;
-    }
 
-    .circle {
-      border: 1px solid red;
-      border-radius: 50%;
-      width: 300px;
-      height: 300px;
-      position: absolute;
-    }
 
-    .inner-circle {
-      border: 1px solid red;
-      clip-path: polygon(50% 0%, 100% 0%, 100% 50%, 50% 50%, 0% 50%, 0% 100%, 50% 100%, 50% 50%);
-      border-radius: 50%;
-      width: 250px;
-      height: 250px;
-      position: absolute;
-      z-index: 0;
-    }
-    
-    .category-group {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      margin: 0 auto;
-      max-width: 100%;
-      flex-direction: column;
-    }
-    .category-group:hover {
-      transform: scale(1.1);
-      transition: transform 0.3s;
-    }
-    .circle-group {
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      display: flex;
-      width: 300px;
-      height: 300px;
-    }
+.echo-wrap {
+  position: relative;
+  width: 100%;
+  height: 300px;
+    text-align: center;
 
-    #wavy-line {
-      position: relative;
-      left: 200px;
-      top: 20px;
-      margin: 0;
-      padding-bottom: 0;
-    }
+}
 
-    #wavy-line-2 {
-      position: relative;
-      left: -100px;
-      top: -190px;
-      margin: 0;
-    }
+.echo-layer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0;
+  white-space: wrap;
 
-    #little-wave-1, #little-wave-2, #little-wave-3 {
-      position: relative;
-      margin: 0;
-      padding: 0;
-    }
-    #little-wave-1 {
-      bottom: 350px;
-      left: 120px;
-      transform: rotate(270deg);
-    }
-    #little-wave-2 {
-      bottom: 55px;
-      right: 37px;
-    }
-    #little-wave-3 {
-      left: 110px;
-      transform: rotate(-45deg);
-    }
+  font-family: "Shrikhand";
+  font-size: clamp(60px, 14vw, 200px);
+
+  color: transparent;
+  -webkit-text-stroke: 1px #FA8072;
+}
+
+.echo-layer.front {
+  color: #001C99;
+  -webkit-text-stroke: 0;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+}
+
+
 
     /* The side navigation menu */
 
