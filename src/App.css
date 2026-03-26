@@ -51,6 +51,7 @@
       font-size: 40px;
       margin-left: 10px;
       cursor: pointer;
+      z-index: 10;
     }
 
     .site-header {
@@ -100,6 +101,7 @@
 
 .echo-layer {
   position: absolute;
+  pointer-events: none;
   top: 0;
   left: 50%;
   margin: 0;

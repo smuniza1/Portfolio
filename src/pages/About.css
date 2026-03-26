@@ -1,175 +1,178 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=Arimo:ital,wght@0,400..700;1,400..700&family=Pixelify+Sans:wght@400..700&family=Shrikhand&display=swap");
 
 :root {
-      --navy-blue: #001C99;
-      --golden-yellow: #F4BB29;
-      --background: #f4f4ee;
-    }
+  --navy-blue: #001C99;
+  --golden-yellow: #F4BB29;
+  --background: #f4f4ee;
+}
 
-    .about-page {
-        width: 100%;
-    }
+.about-page {
+  width: 100%;
+  margin-bottom: 100px;
+}
 
-    .rectangle {
-        border: 1px solid red;
-        width: 300px;
-        height: 200px;
-    }
+.rectangle {
+  border: 1px solid red;
+  width: 300px;
+  height: 200px;
+}
 
-    .rectangle-row {
-        display: flex;
-        gap: 50px;
-    }
+.rectangle-row {
+  display: flex;
+  gap: 50px;
+}
 
-    .skills-section {
-        margin: 100px auto 100px 200px;
-    }
+.skills-section {
+  margin: 100px 0 0 0;
+  width: 100%;
+}
 
-    .skills-title {
-        text-align: center;
-        font-family: "Arimo";
-        color: var(--navy-blue);
-        font-size: 40px;
-    }
+.skills-title {
+  text-align: center;
+  font-family: "Arimo";
+  color: var(--navy-blue);
+  font-size: 40px;
+}
 
-    .skills-heading {
-        text-align: center;
-        font-family: "Arimo";
-        color: var(--navy-blue);
-        font-size: 30px;
-    }
+.skills-heading {
+  text-align: center;
+  font-family: "Arimo";
+  color: var(--navy-blue);
+  font-size: 30px;
+}
 
-    .skills {
-        text-align: center;
-        font-family: "Abel";
-        color: var(--navy-blue);
-        margin: auto 20px;
-        font-size: 20px;
-    }
+.skills {
+  text-align: center;
+  font-family: "Abel";
+  color: var(--navy-blue);
+  margin: auto 20px;
+  font-size: 20px;
+}
 
+.tombstone-mask {
+  width: 300px;
+  height: 380px;
+  background-color: transparent;
+  border-radius: 150px 150px 0px 0px;
+  overflow: hidden;
+  left: 50%;
+  top: 0;
+  position: absolute;
+}
 
-    .tombstone-mask {
-        width: 300px;
-        height: 380px;
-        background-color: transparent;
-        border-radius: 150px 150px 0px 0px;
-        overflow: hidden;
-        left: 50%;
-        top: 0;
-        position: absolute;
-    }
+.photo {
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
 
-    .photo {
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
+.red-tombstone {
+  border: 1px solid red;
+  z-index: 1;
+  transform: translate(-60%, 20px);
+}
 
-    }
+.yellow-tombstone {
+  border: 1px solid var(--golden-yellow);
+  z-index: 3;
+  transform: translate(-40%, -20px);
+}
 
-    .red-tombstone {
-        border: 1px solid red;
-        z-index: 1;
+.portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-        transform: translate(-60%, 20px);
-    }
+.main {
+  margin-left: 200px;
+  margin-top: 100px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
 
-    .yellow-tombstone {
-        border: 1px solid var(--golden-yellow);
-        z-index: 3;
-        transform: translate(-40%, -20px);
-    }
+.about-top {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
 
-     .portrait {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-    
-    .main {
-        margin-left: 200px;
-        margin-top: 100px;
-        position: relative;
-        display: flex;
-        align-items: flex-start;
-    }
+.photo-stack {
+  position: relative;
+  width: 300px;
+  height: 380px;
+}
 
-    .photo-stack {
-    position: relative;
-    width: 300px;
-    height: 380px;
-    }
+.description {
+  width: 500px;
+  text-align: left;
+  font-family: "Abel";
+  color: var(--navy-blue);
+  padding-left: 100px;
+}
 
-    .description {
-        width: 500px;
-        text-align: left;
-        font-family: "Abel";
-        color: var(--navy-blue);
-        padding-left: 100px;
-    }
+@media (max-width: 768px) {
+  .main {
+    margin: 40px 0;
+    padding: 0 16px;
+  }
 
-    @media (max-width: 768px) {
-        .main {
-            flex-direction: column;
-            text-align: center;
-            gap: 40px;
-            margin: 40px 0;
-            padding: 0 16px;
-        }
+  .about-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
 
-        .description {
-            width: 90%;
-            padding-left: 0;
-        }
+  .photo-stack {
+    width: 240px;
+    height: 305px;
+    flex: none;
+    align-items: center;
+    margin: 0 auto;
+  }
 
-        .photo-stack {
-            width: 240px;
-            height: 305px;
-            flex: none;
-            align-items: center;
-            margin: 0 auto;
-        }
+  .tombstone-mask {
+    width: 240px;
+    height: 305px;
+    border-radius: 120px 120px 0 0;
+  }
 
-        .tombstone-mask {
-            width: 240px;
-            height: 305px;
-            border-radius: 120px 120px 0 0;  
-        }
+  .description {
+    width: 100%;
+    max-width: 600px;
+    padding-left: 0;
+    font-size: 18px;
+    margin: 0 auto;
+  }
 
-        .description {
-            width: 100%;
-            max-width: 600px;
-            padding-left: 0;
-            font-size: 18px;
-            align-items: center;
-            margin: 0 auto;
-        }
+  .skills-section {
+    margin: 60px auto 0;
+    padding: 0 16px;
+  }
 
-        .skills-section {
-            margin: 60px auto;
-            padding: 0 16px;
-        }
+  .skills-title {
+    font-size: 32px;
+  }
 
-        .skills-title {
-            font-size: 32px;
-        }
+  .skills-heading {
+    font-size: 24px;
+  }
 
-        .skills-heading {
-            font-size: 24px;
-        }
+  .skills {
+    font-size: 18px;
+    margin: 0;
+  }
 
-        .skills {
-            font-size: 18px;
-            margin: 0;
-        }
-        .rectangle-row {
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-        }
-        .rectangle {
-            min-height: 170px;
-            padding: 16px;
-        }
+  .rectangle-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
 
-    }
+  .rectangle {
+    min-height: 170px;
+    padding: 16px;
+  }
+}

@@ -75,8 +75,8 @@ z-index: -1;
     justify-content: center;
     font-size: 64px;
   }
-  .main {
-    margin: 50px auto 0;
+  main {
+    margin: auto 0;
   }
   .green-circlles {
     flex-direction: row;

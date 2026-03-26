@@ -12,8 +12,10 @@
 
 .thumbnail-container {
   position: relative;
-  display: block;
+  align-items: flex-start; 
+  display: flex;
   cursor: pointer;
+  flex-wrap: wrap;
 }
 
 .lightbox-overlay {
@@ -69,10 +71,6 @@
   width: 100%;
 }
 
-.thumbnail-container {
-  position: relative;
-  display: block;
-}
 .thumbnail-heading {
   display: none;
   position: absolute;
@@ -92,6 +90,7 @@
 
 .content {
   margin-left: 200px;
+  margin-right: 3%;
 }
 .gallery {
   display: flex;
@@ -122,45 +121,109 @@
   display: flex;
   align-items: flex-start; 
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 }
 .ig-posts {
-  width: 400px;
+  width: 47%;
   padding-bottom: 30px;
 }
 
 .graphics-gap {
     gap: 16px;
 }
-#mamas-image {
-  width: 500px;
+
+.mamas-pizza {
+  width: 100%;
 }
+
+#logo-image {
+  width: 100%;
+}
+.mural {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+}
+
+.brand-images figure {
+  margin: 0;
+}
+
+.brand-images > figure {
+  width: 47%;
+}
+
 #mural-image {
-  width: 521px;
+  display: block;
+  width: 100%;
+}
+.mural-individual-pics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.mural-individual-pics img {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+#mural-image,
+.mural-individual-pics img {
+  cursor: pointer;
 }
 
 .music-pops-images {
-  width: 100vw;
+  width: 100%;
   display: flex;
   gap: 60px;
   align-items: flex-start;
 }
 
+.music-pops-images img {
+  cursor: pointer;
+}
+
 #music-pops-box {
-  width: 31%;
+  width: 40%;
 }
 
 .music-pops-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  width: 40%;
+  width: 51.5%;
 }
 
 .music-pops-grid img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 56px;
+  cursor: pointer;
+  z-index: 5002;
+  padding: 10px 16px;
+  line-height: 1;
+}
+
+.lightbox-arrow-left {
+  left: 30px;
+}
+
+.lightbox-arrow-right {
+  right: 30px;
 }
 
 .posters-text {
@@ -318,3 +381,29 @@ font-size: 40px;
 display: inline-flex;
 }
 
+@media (max-width: 768px) {
+  .brand-images {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #logo-image,
+  .mural {
+    width: 100%;
+  }
+
+  .mural-individual-pics {
+    width: 100%;
+  }
+
+  .content {
+    margin: 0;
+    width: 100%;
+  }
+  .graphics-page main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+}

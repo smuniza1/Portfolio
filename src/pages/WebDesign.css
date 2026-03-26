@@ -1,7 +1,53 @@
-.web-thumbnail {
-    cursor: pointer;
+.webdesign-page {
+  width: 100%;
+  margin-bottom: 100px;
 }
 
-.web-gap {
-    gap: 40px;
+.webdesign-main {
+  display: flex;
+  width: 100%;
+}
+
+.web-gallery {
+  margin-left: 200px;
+  padding-right: 80px;
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.web-card {
+  display: block;
+  width: calc(75% - 20px);
+  text-decoration: none;
+}
+
+.web-thumbnail {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* tablet + mobile */
+@media (max-width: 768px) {
+  .webdesign-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .web-gallery {
+    margin-left: 0;
+    padding: 0 20px;
+    justify-content: center;
+  }
+
+  .web-card {
+    width: 100%;
+    max-width: 500px;
+  }
 }
