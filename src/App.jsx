@@ -6,6 +6,7 @@ import Graphics from "./pages/Graphics";
 import Video from "./pages/Video";
 import WebDesign from "./pages/WebDesign";
 import About from "./pages/About";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -25,6 +26,8 @@ function App() {
         <Route path="/webdesign" element={<WebDesign openNav={toggleNav} />} />
         <Route path="/about" element={<About openNav={toggleNav} />} />
       </Routes>
+
+      <Analytics />
     </>
   );
 }
