@@ -12,10 +12,10 @@ const posterImages = [
 
 const muralImages = [
   { full: "/images/mural-full.jpg", title: "MURAL" },
-  { full: "/images/mural-onion.jpeg", title: "Mural Onion" },
-  { full: "/images/mural-pepper.jpeg", title: "Mural Pepper" },
-  { full: "/images/mural-tomato.jpeg", title: "Mural Tomato" },
-  { full: "/images/mural-mushroom.jpeg", title: "Mural Mushroom" },
+  { full: "/images/mural-onion.jpeg", title: "Onion Mural" },
+  { full: "/images/mural-pepper.jpeg", title: "Bell Pepper Mural" },
+  { full: "/images/mural-tomato.jpeg", title: "Tomato Mural" },
+  { full: "/images/mural-mushroom.jpeg", title: "Mushroom Mural" },
 ];
 
 const musicPopsImages = [
@@ -155,22 +155,22 @@ export default function Graphics({ openNav }) {
                   <div className="mural-individual-pics">
                     <img
                       src="/images/mural-onion.jpeg"
-                      alt="Mural onion"
+                      alt="Onion Mural"
                       onClick={() => openGallery("mural", 1)}
                     />
                     <img
                       src="/images/mural-pepper.jpeg"
-                      alt="Mural pepper"
+                      alt="Bell Pepper Mural"
                       onClick={() => openGallery("mural", 2)}
                     />
                     <img
                       src="/images/mural-tomato.jpeg"
-                      alt="Mural tomato"
+                      alt="Tomato Mural"
                       onClick={() => openGallery("mural", 3)}
                     />
                     <img
                       src="/images/mural-mushroom.jpeg"
-                      alt="Mural mushroom"
+                      alt="Mushroom Mural"
                       onClick={() => openGallery("mural", 4)}
                     />
                   </div>

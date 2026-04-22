@@ -114,7 +114,7 @@
   font-family: "Shrikhand";
   color: var(--golden-yellow);
   text-align: left;
-  font-size: 72px;
+  font-size: clamp(50px, 6vw, 72px);
 }
 
 .brand-images {
@@ -400,10 +400,42 @@ display: inline-flex;
   .content {
     margin: 0;
     width: 100%;
+    padding: 0 20px;
   }
   .graphics-page main {
     flex-direction: column;
     align-items: center;
   }
+  .brand-images > figure,
+  .mural {
+    width: 100%;
+    max-width: 500px;
+  }
+  .gallery {
+    justify-content: center;
+  }
+  .gallery img {
+    height: auto;
+  }
 
+  .thumbnail-container {
+    width: 100%;
+    max-width: 400px; /* keeps them consistent + not too wide */
+  }
+
+  .thumbnail-image {
+    width: 100%;
+    height: auto;
+  }
+  .ig-posts {
+    width: 100%;
+    max-width: 400px; /* match posters */
+  }
+
+  .lif .brand-images {
+    align-items: center;
+  }
+  .brand-names {
+    text-align: center;
+  }
 }
