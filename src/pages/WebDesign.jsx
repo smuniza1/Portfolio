@@ -22,11 +22,14 @@ export default function WebDesign({ openNav }) {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              className="web-thumbnail"
-              src="/images/hand embroidery 101 thumbnail.png"
-              alt="Hand Embroidery 101 website"
-            />
+            <figure>
+              <img
+                className="web-thumbnail"
+                src="/images/hand embroidery 101 thumbnail.png"
+                alt="Hand Embroidery 101 website"
+              />
+              <figcaption className="web-card-caption">Hand Embroidery 101 Responsive Web Design</figcaption>
+            </figure>
           </a>
 
           <a
@@ -35,11 +38,14 @@ export default function WebDesign({ openNav }) {
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              className="web-thumbnail"
-              src="/images/saiyr thumbnail.png"
-              alt="Saiyr product landing page"
-            />
+            <figure>
+              <img
+                className="web-thumbnail"
+                src="/images/saiyr thumbnail.png"
+                alt="Saiyr product landing page"
+              />
+              <figcaption className="web-card-caption">Saiyr Paper Co. Landing Page</figcaption>
+            </figure>
           </a>
         </div>
       </main>

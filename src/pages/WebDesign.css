@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Arimo:ital,wght@0,400..700;1,400..700&family=Pixelify+Sans:wght@400..700&family=Shrikhand&display=swap");
+
 .webdesign-page {
   width: 100%;
   margin-bottom: 100px;
@@ -22,8 +24,23 @@
 
 .web-card {
   display: block;
-  width: calc(75% - 20px);
+  width: calc(40% - 20px);
   text-decoration: none;
+  border: 1px var(--golden-yellow) solid;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.web-card-caption {
+  font-family:"Abel";
+  text-align: center;
+  color: var(--salmon);
+  font-size: 24px;
+  flex-wrap: wrap;
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
 }
 
 .web-thumbnail {
@@ -31,6 +48,7 @@
   width: 100%;
   height: auto;
   cursor: pointer;
+  margin-top: 30px;
 }
 
 /* tablet + mobile */

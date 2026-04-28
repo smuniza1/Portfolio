@@ -4,6 +4,7 @@
   --navy-blue: #001C99;
   --golden-yellow: #F4BB29;
   --background: #f4f4ee;
+  --salmon: #FA8072;
 }
 
 .about-page {
@@ -11,71 +12,53 @@
   margin-bottom: 100px;
 }
 
-.rectangle {
-  border: 1px solid red;
-  width: 300px;
-  height: 200px;
-}
-
-.rectangle-row {
+.about-main {
+  margin: 100px 50px 0 200px;
   display: flex;
-  gap: 50px;
+  flex-direction: column;
+  gap: 100px;
 }
 
-.skills-section {
-  margin: 100px 0 0 0;
-  width: 100%;
+.about-intro {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
 }
 
-.skills-title {
-  text-align: center;
-  font-family: "Arimo";
-  color: var(--navy-blue);
-  font-size: 40px;
-}
-
-.skills-heading {
-  text-align: center;
-  font-family: "Arimo";
-  color: var(--navy-blue);
-  font-size: 30px;
-}
-
-.skills {
-  text-align: center;
-  font-family: "Abel";
-  color: var(--navy-blue);
-  margin: auto 20px;
-  font-size: 20px;
+.photo-stack {
+  position: relative;
+  width: 300px;
+  height: 380px;
+  flex-shrink: 0;
 }
 
 .tombstone-mask {
+  position: absolute;
+  top: 0;
+  left: 50%;
   width: 300px;
   height: 380px;
-  background-color: transparent;
-  border-radius: 150px 150px 0px 0px;
+  border-radius: 150px 150px 0 0;
   overflow: hidden;
-  left: 50%;
-  top: 0;
-  position: absolute;
+  background-color: transparent;
 }
 
 .photo {
-  left: 50%;
   transform: translateX(-50%);
   z-index: 2;
 }
 
 .red-tombstone {
-  border: 1px solid red;
-  z-index: 1;
+  border: 1px solid var(--salmon);
   transform: translate(-60%, 20px);
+  z-index: 1;
 }
 
 .yellow-tombstone {
   border: 1px solid var(--golden-yellow);
-  z-index: 3;
   transform: translate(-40%, -20px);
+  z-index: 3;
 }
 
 .portrait {
@@ -85,42 +68,74 @@
   display: block;
 }
 
-.main {
-  margin-left: 200px;
-  margin-top: 100px;
-  margin-right: 50px;
+.description {
+  width: min(500px, 100%);
+  font-family: "Abel", sans-serif;
+  color: var(--navy-blue);
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.description p {
+  margin: 0 0 1rem;
+}
+
+.skills-section {
+  width: 100%;
+}
+
+.skills-title {
+  text-align: center;
+  font-family: "Arimo", sans-serif;
+  color: var(--navy-blue);
+  font-size: clamp(32px, 5vw, 40px);
+  margin-bottom: 40px;
+}
+
+.skills-grid {
   display: flex;
   flex-direction: column;
+  gap: 32px;
+  align-items: center;
 }
 
-.about-top {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
+.skill-card {
+  width: min(100%, 320px);
+  min-height: 300px;
+  padding: 24px;
+  border: 1px solid var(--golden-yellow);
+  border-radius: 30px;
 }
 
-.photo-stack {
-  position: relative;
-  width: 300px;
-  height: 380px;
+.skills-heading {
+  text-align: center;
+  font-family: "Arimo", sans-serif;
+  color: var(--salmon);
+  font-size: clamp(24px, 4vw, 30px);
+  margin: 0 0 20px;
 }
 
-.description {
-  width: 500px;
-  text-align: left;
-  font-family: "Abel";
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-family: "Abel", sans-serif;
   color: var(--navy-blue);
-  padding-left: 100px;
+  font-size: 20px;
+  line-height: 1.7;
 }
 
 @media (max-width: 768px) {
-  .main {
+  .about-main {
     margin: 40px 0;
     padding: 0 16px;
+    gap: 60px;
   }
 
-  .about-top {
+  .about-intro {
     flex-direction: column;
+    align-items: center;
     text-align: center;
     gap: 40px;
   }
@@ -128,9 +143,6 @@
   .photo-stack {
     width: 240px;
     height: 305px;
-    flex: none;
-    align-items: center;
-    margin: 0 auto;
   }
 
   .tombstone-mask {
@@ -140,39 +152,20 @@
   }
 
   .description {
-    width: 100%;
     max-width: 600px;
-    padding-left: 0;
     font-size: 18px;
-    margin: 0 auto;
   }
 
-  .skills-section {
-    margin: 60px auto 0;
-    padding: 0 16px;
-  }
-
-  .skills-title {
-    font-size: 32px;
-  }
-
-  .skills-heading {
-    font-size: 24px;
-  }
-
-  .skills {
-    font-size: 18px;
-    margin: 0;
-  }
-
-  .rectangle-row {
-    flex-direction: column;
-    align-items: center;
+  .skills-grid {
     gap: 24px;
   }
 
-  .rectangle {
+  .skill-card {
     min-height: 170px;
-    padding: 16px;
+    padding: 20px;
+  }
+
+  .skills-list {
+    font-size: 18px;
   }
 }
