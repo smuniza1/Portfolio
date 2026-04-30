@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Arimo:ital,wght@0,400..700;1,400..700&family=Pixelify+Sans:wght@400..700&family=Shrikhand&display=swap");
+
+:root {
+  --navy-blue: #001C99;
+  --golden-yellow: #F4BB29;
+  --background: #f4f4ee;
+  --salmon: #FA8072;
+}
+
+.photography-page {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.photography-main {
+  display: flex;
+  width: 100%;
+}
+
+/* ── Category filter pills ── */
+.photo-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 32px 0 40px;
+}
+
+.filter-pill {
+  background: transparent;
+  border: 1px solid var(--navy-blue);
+  border-radius: 999px;
+  color: var(--navy-blue);
+  font-family: "Arimo", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 22px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.filter-pill:hover {
+  background: var(--navy-blue);
+  color: var(--background);
+}
+
+.filter-pill.active {
+  background: var(--navy-blue);
+  color: var(--background);
+}
+
+/* ── Main content area ── */
+.photo-content {
+  margin-left: 200px;
+  margin-right: 3%;
+  width: 100%;
+}
+
+/* ── Masonry grid ── */
+.photo-grid {
+  columns: 3;
+  column-gap: 16px;
+}
+
+.photo-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.04);
+}
+
+/* hover overlay */
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 28, 153, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 12px;
+  text-align: center;
+}
+
+.photo-item:hover .photo-overlay {
+  opacity: 1;
+}
+
+.photo-overlay-title {
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--golden-yellow);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.photo-overlay-cat {
+  font-family: "Abel", sans-serif;
+  font-size: 13px;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.08em;
+}
+
+/* ── Lightbox ── */
+.photo-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  padding: 20px;
+}
+
+.photo-lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+}
+
+.photo-lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.photo-lightbox-caption {
+  color: var(--golden-yellow);
+  font-family: "Arimo", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 14px;
+}
+
+.photo-lightbox-cat {
+  color: rgba(255,255,255,0.6);
+  font-family: "Abel", sans-serif;
+  font-size: 14px;
+  margin-top: 4px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.photo-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 48px;
+  cursor: pointer;
+  z-index: 5001;
+}
+
+.photo-lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 56px;
+  cursor: pointer;
+  z-index: 5002;
+  padding: 10px 16px;
+  line-height: 1;
+}
+
+.photo-lightbox-arrow-left  { left: 30px; }
+.photo-lightbox-arrow-right { right: 30px; }
+
+/* ── Empty state ── */
+.photo-empty {
+  font-family: "Abel", sans-serif;
+  color: var(--navy-blue);
+  font-size: 20px;
+  text-align: center;
+  padding: 60px 0;
+  opacity: 0.5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .photo-grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .photography-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo-content {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 16px;
+    width: 100%;
+  }
+
+  .photo-grid {
+    columns: 2;
+    column-gap: 10px;
+  }
+
+  .photo-item {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    columns: 1;
+  }
+}

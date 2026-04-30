@@ -31,6 +31,7 @@ export default function NavMenu({ isOpen, close }) {
       <Link to="/" onClick={close}>HOME</Link>
       <Link to="/graphics" onClick={close}>GRAPHICS</Link>
       <Link to="/webdesign" onClick={close}>WEB DESIGN</Link>
+      <Link to="/photography" onClick={close}>PHOTOGRAPHY</Link>
       <Link to="/about" onClick={close}>ABOUT</Link>
     </div>
   );
