@@ -8,23 +8,14 @@ export default function PageTitle({ title }) {
   useEffect(() => {
     function updateCircles() {
       if (!titleRef.current) return;
-
-      const textLength = titleRef.current.scrollWidth; // true text width
-      const circleSize = 100;
-      const overlap = 20; // circles can overlap a bit visually
+      const textLength = titleRef.current.scrollWidth;
       const effectiveCircleCoverage = 70;
-
-      const count = Math.max(
-        5,
-        Math.ceil(textLength / effectiveCircleCoverage)
-      );
-
+      const count = Math.max(5, Math.ceil(textLength / effectiveCircleCoverage));
       setCircleCount(count);
     }
 
     updateCircles();
     window.addEventListener("resize", updateCircles);
-
     return () => window.removeEventListener("resize", updateCircles);
   }, [title]);
 
@@ -34,7 +25,11 @@ export default function PageTitle({ title }) {
 
       <div className="green-circlles">
         {Array.from({ length: circleCount }).map((_, i) => (
-          <div key={i} className="title-circle"></div>
+          <div
+            key={i}
+            className="title-circle"
+            style={{ animationDelay: `${i * 60}ms` }}
+          />
         ))}
       </div>
     </div>

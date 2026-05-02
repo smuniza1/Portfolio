@@ -96,8 +96,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   margin-top: 25px;
   margin-right: 0;
 }
@@ -228,9 +228,9 @@
 
 .posters-text {
   font-family: "Arimo";
-  text-align: center;
-  justify-content: center;
-  color: var(--navy-blue);
+  text-align: left;
+  justify-content: left;
+  color: var(--salmon);
 }
 
 .gallery img {
@@ -404,7 +404,7 @@ display: inline-flex;
   }
   .graphics-page main {
     flex-direction: column;
-    align-items: center;
+    align-items: left;
   }
   .brand-images > figure,
   .mural {
@@ -413,7 +413,7 @@ display: inline-flex;
   }
   .gallery {
     justify-content: center;
-  }
+  }c
   .gallery img {
     height: auto;
   }
