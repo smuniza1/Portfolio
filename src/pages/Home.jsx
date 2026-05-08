@@ -1,5 +1,68 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 import "./Home.css";
+
+const TITLES = ["GRAPHIC DESIGNER", "WEB DESIGNER"];
+const HOLD_DURATION = 2200;
+const TRANSITION_DURATION = 400;
+
+function AnimatedTagline() {
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(null);
+  const [animating, setAnimating] = useState(false);
+  const [wrapWidth, setWrapWidth] = useState(null);
+  const measureRef = useRef(null);
+
+  // After first render, measure all titles and lock to the widest
+  useEffect(() => {
+    if (!measureRef.current) return;
+    const el = measureRef.current;
+    let max = 0;
+    TITLES.forEach((t) => {
+      el.textContent = t;
+      max = Math.max(max, el.getBoundingClientRect().width);
+    });
+    el.textContent = TITLES[0];
+    setWrapWidth(Math.ceil(max));
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const next = (titleIndex + 1) % TITLES.length;
+      setNextIndex(next);
+      setAnimating(true);
+
+      setTimeout(() => {
+        setTitleIndex(next);
+        setNextIndex(null);
+        setAnimating(false);
+      }, TRANSITION_DURATION);
+    }, HOLD_DURATION);
+
+    return () => clearInterval(interval);
+  }, [titleIndex]);
+
+  return (
+    <p className="home-tagline">
+      <span ref={measureRef} className="tagline-word tagline-measure" aria-hidden="true">
+        {TITLES[0]}
+      </span>
+      <span
+        className="tagline-rotating-wrap"
+        style={wrapWidth ? { width: wrapWidth } : {}}
+      >
+        <span className={`tagline-word ${animating ? "slide-out" : ""}`}>
+          {TITLES[titleIndex]}
+        </span>
+        {animating && nextIndex !== null && (
+          <span className="tagline-word slide-in">
+            {TITLES[nextIndex]}
+          </span>
+        )}
+      </span>
+    </p>
+  );
+}
 
 export function EchoName() {
   const copies = 15;
@@ -29,11 +92,11 @@ export function EchoName() {
 }
 
 const navLinks = [
-  { to: "/graphics",    label: "Graphics" },
-  { to: "/photography", label: "Photography" },
-  { to: "/video",       label: "Video" },
-  { to: "/webdesign",   label: "Web Design" },
-  { to: "/about",       label: "About" },
+  { to: "/graphics",    label: "GRAPHICS" },
+  { to: "/photography", label: "PHOTOGRAPHY" },
+  { to: "/video",       label: "VIDEO" },
+  { to: "/webdesign",   label: "WEB DESIGN" },
+  { to: "/about",       label: "ABOUT" },
 ];
 
 export default function Home({ openNav }) {
@@ -45,9 +108,8 @@ export default function Home({ openNav }) {
 
       {/* Hero */}
       <section className="home-hero">
-        <p className="home-tagline">Graphic Designer &amp; Multimedia Specialist</p>
+        <AnimatedTagline />
         <EchoName />
-        <p className="home-location">Richmond, VA — Washington D.C.</p>
       </section>
 
       {/* Nav links */}

@@ -36,20 +36,12 @@
   opacity: 0;
   animation: fadeUp 0.6s ease forwards;
   animation-delay: 0ms;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 
-/* Location below name */
-.home-location {
-  font-family: "Abel", sans-serif;
-  font-size: clamp(13px, 1.5vw, 17px);
-  color: var(--navy-blue);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin: 28px 0 0 4px;
-  opacity: 0.5;
-  animation: fadeUp 0.6s ease forwards;
-  animation-delay: 200ms;
-}
+
 
 /* ── Echo name (from App.css — kept here for self-containment) ── */
 .echo-wrap {
@@ -86,7 +78,7 @@
   flex-direction: column;
   gap: 0;
   border-top: 1px solid rgba(0, 28, 153, 0.15);
-  margin: 40px 0 0;
+  margin: 300px 0 0;
 }
 
 .home-nav-link {
@@ -165,7 +157,49 @@
   color: var(--salmon);
 }
 
-/* ── Animations ── */
+/* Animated rotating tagline */
+.tagline-rotating-wrap {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 1.2em;
+  vertical-align: bottom;
+  /* width is locked in JS to the widest title, preventing clipping */
+}
+
+.tagline-measure {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.tagline-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.tagline-word.slide-out {
+  animation: taglineSlideOut 0.4s ease forwards;
+}
+
+.tagline-word.slide-in {
+  position: absolute;
+  left: 0;
+  animation: taglineSlideIn 0.4s ease forwards;
+}
+
+@keyframes taglineSlideOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-14px); }
+}
+
+@keyframes taglineSlideIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -187,7 +221,8 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 600px) {
+
+@media (max-width: 768px) {
   .home-footer {
     flex-direction: column;
     align-items: flex-start;
@@ -196,5 +231,8 @@
 
   .home-nav-link {
     padding: 14px 4px;
+  }
+  .home-nav {
+    margin: 80px 0 0;
   }
 }
