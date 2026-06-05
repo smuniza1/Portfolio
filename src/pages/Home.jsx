@@ -94,7 +94,6 @@ export function EchoName() {
 const navLinks = [
   { to: "/graphics",    label: "GRAPHICS" },
   { to: "/photography", label: "PHOTOGRAPHY" },
-  { to: "/video",       label: "VIDEO" },
   { to: "/webdesign",   label: "WEB DESIGN" },
   { to: "/about",       label: "ABOUT" },
 ];
