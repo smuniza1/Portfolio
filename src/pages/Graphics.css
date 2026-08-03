@@ -268,61 +268,8 @@ header {
       display: flex;
     }
 
-.circle {
-border: 1px solid #74c009;
-border-radius: 50%;
-width: 100px;
-min-width: 0;
-height: 100px;
-min-height: 0;
-position: relative;
-}
-.green-circlles {
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-margin: auto;
-flex-flow: column;
-grid-template-rows: auto auto;
-grid-template-columns: 1fr 1fr;
-grid-auto-columns: 1fr;
-place-items: center;
-display: flex;
-position: relative;
-overflow: visible;
-gap: 25px;
-z-index: 25;
-}
-
-.page-heading {
-  width: 25%;
-  min-width: 175px; /* Prevent becoming too narrow */
-  max-width: 175px;
-  padding: 0;
-  background-color: none;
-  position: fixed;
-  box-sizing: border-box;
-  z-index: 1;
-  height: calc(100vh - 100px);
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  top: 100px;
-  flex-direction: column;
-}
-.page-heading h1 {
-  transform: rotate(-90deg);
-  z-index: 2;
-  background-color: none;
-  font-family: Arimo;
-  font-size: 92px;
-  position: absolute;
-  margin: 0;
-  text-align: center;
-  justify-content: center;
-  width: 100%;
-  display: flex;
-  color: var(--navy-blue);
-}
+/* .circle, .green-circlles, and .page-heading are owned by
+   PageTitle.css (including its mobile breakpoint) — not duplicated here */
 
 /*body {
       background-color: var(--background);
@@ -413,7 +360,7 @@ display: inline-flex;
   }
   .gallery {
     justify-content: center;
-  }c
+  }
   .gallery img {
     height: auto;
   }
@@ -437,5 +384,57 @@ display: inline-flex;
   }
   .brand-names {
     text-align: center;
+  }
+
+  /* Site header / logo text shrinks so it never wraps or overflows
+     on narrow phones */
+  header {
+    padding: 0.75rem 1rem;
+  }
+
+  header h1 {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+
+  #menu-icon {
+    font-size: 32px;
+  }
+
+  /* Music Pops brand block: stack the box art above the flavor grid
+     instead of squeezing them side by side */
+  .music-pops-images {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #music-pops-box,
+  .music-pops-grid {
+    width: 100%;
+  }
+
+  /* Lightbox controls sized down so close/prev/next don't crowd
+     a narrow screen or sit on top of the image */
+  .lightbox-close {
+    top: 12px;
+    right: 16px;
+    font-size: 34px;
+  }
+
+  .lightbox-arrow {
+    font-size: 34px;
+    padding: 8px 10px;
+  }
+
+  .lightbox-arrow-left {
+    left: 6px;
+  }
+
+  .lightbox-arrow-right {
+    right: 6px;
+  }
+
+  .lightbox-caption {
+    font-size: 16px;
+    padding: 0 40px;
   }
 }

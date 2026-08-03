@@ -51,7 +51,14 @@
   margin-top: 30px;
 }
 
-/* tablet + mobile */
+/* tablet */
+@media (max-width: 1024px) {
+  .web-card {
+    width: calc(48% - 20px);
+  }
+}
+
+/* mobile */
 @media (max-width: 768px) {
   .webdesign-main {
     flex-direction: column;

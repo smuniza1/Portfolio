@@ -36,5 +36,3 @@ export default function NavMenu({ isOpen, close }) {
     </div>
   );
 }
-
-

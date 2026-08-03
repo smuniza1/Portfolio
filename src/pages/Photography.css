@@ -231,6 +231,35 @@
   .photo-item {
     margin-bottom: 10px;
   }
+
+  .photo-lightbox-close {
+    top: 12px;
+    right: 16px;
+    font-size: 34px;
+  }
+
+  .photo-lightbox-arrow {
+    font-size: 34px;
+    padding: 8px 10px;
+  }
+
+  .photo-lightbox-arrow-left {
+    left: 6px;
+  }
+
+  .photo-lightbox-arrow-right {
+    right: 6px;
+  }
+
+  .photo-lightbox-caption {
+    font-size: 15px;
+    padding: 0 40px;
+  }
+
+  .filter-pill {
+    font-size: 13px;
+    padding: 7px 16px;
+  }
 }
 
 @media (max-width: 480px) {
