@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import "./Home.css";
 
-const TITLES = ["GRAPHIC DESIGNER", "WEB DESIGNER"];
+const TITLES = ["GRAPHIC DESIGNER", "WEB DESIGNER", "MULTIMEDIA SPECIALIST"];
 const HOLD_DURATION = 2200;
 const TRANSITION_DURATION = 400;
 
@@ -95,7 +95,8 @@ const navLinks = [
   { to: "/graphics",    label: "GRAPHICS" },
   { to: "/photography", label: "PHOTOGRAPHY" },
   { to: "/webdesign",   label: "WEB DESIGN" },
-  { to: "/about",       label: "ABOUT" },
+  { to: "/video",       label: "VIDEO" },
+  { to: "/about",       label: "ABOUT" }
 ];
 
 export default function Home({ openNav }) {
